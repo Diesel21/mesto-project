@@ -1,0 +1,20 @@
+.card__button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  bottom: 30px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card__button:hover {
+  opacity: 0.5;
+}

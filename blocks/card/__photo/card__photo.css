@@ -1,0 +1,8 @@
+.card__photo {
+  box-sizing: border-box;
+  display: block;
+  height: 282px;
+  object-fit: cover;
+  object-position: center;
+  width: 282px;
+}
