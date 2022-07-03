@@ -14,6 +14,23 @@
     <img class="header__logo" src="./images/header-logo.svg" alt="Логотип сайта.">
     <hr class="header__separator">
   </header>
+  <div class="popup">
+    <div class="popup__container">
+      <h2 class="popup__header">Редактировать профиль</h2>
+      <form class="popup__form">
+        <fieldset class="popup__inputs">
+          <input class="popup__input" type="text" value="Жак-Ив Кусто" id="name" name="name"
+            placeholder="Представьтесь с;">
+          <input class="popup__input" type="text" value="Исследователь океана" id="profession" name="profession"
+            placeholder="А чем занимаетесь?">
+        </fieldset>
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>
+      <button class="popup__close-button">
+        <img src="./images/close.svg" alt="Закрыть." class="popup__close-icon">
+      </button>
+    </div>
+  </div>
   <main class="content">
     <section class="profile">
       <div class="profile__box">
