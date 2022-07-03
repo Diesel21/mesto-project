@@ -1,11 +1,24 @@
 .cards__grid {
   column-gap: 17px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 282px);
+  grid-template-columns: repeat(auto-fit, 282px);
   justify-content: center;
+  justify-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
   row-gap: 20px;
   width: 100%;
+}
+
+@media screen and (max-width: 1023px) {
+  .cards__grid {
+    grid-template-columns: repeat(auto-fit, 302px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cards__grid {
+    grid-template-columns: 1fr;
+  }
 }
