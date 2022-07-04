@@ -2,11 +2,16 @@
   border: 1px solid #FFF;
   height: 24px;
   width: 24px;
+  position: absolute;
+  top: 15px;
+  right: -42px;
 }
 
 @media screen and (max-width:767px) {
   .profile__button_type_edit {
     height: 18px;
+    right: 19px;
+    top: 8px;
     width: 18px;
   }
 }

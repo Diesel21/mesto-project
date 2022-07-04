@@ -1,11 +1,12 @@
 .profile__info {
   align-items: flex-start;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 16px;
   max-width: 336px;
-  box-sizing: border-box;
-  width: 100%;
+  position: relative;
+  width: min-content;
 }
 
 @media screen and (max-width: 767px) {
@@ -13,5 +14,6 @@
     align-items: center;
     gap: 8px;
     max-width: 282px;
+    width: 100%;
   }
 }
