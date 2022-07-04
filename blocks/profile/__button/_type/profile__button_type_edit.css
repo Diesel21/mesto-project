@@ -1,17 +1,12 @@
 .profile__button_type_edit {
   border: 1px solid #FFF;
   height: 24px;
-  position: absolute;
-  right: 0px;
-  top: 15px;
   width: 24px;
 }
 
 @media screen and (max-width:767px) {
   .profile__button_type_edit {
     height: 18px;
-    right: 19px;
-    top: 8px;
     width: 18px;
   }
 }

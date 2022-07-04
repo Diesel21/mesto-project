@@ -8,5 +8,6 @@
   .profile__box {
     flex-direction: column;
     gap: 26px;
+    width: 100%;
   }
 }

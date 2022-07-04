@@ -23,7 +23,7 @@
               С одной стороны так меньше кода и он более чистый,
               но тогда есть несоотвествие с макетом(расстояние от инпута до разделительной линии(нижней раницы)).
               Если нужно 100% соотвествие - тогда оберну input и hr в отдельный блок и там задам размер.
-              В общем - если что готов быстро исправить c; -->
+              В общем - если что готов быстро исправить -->
           <input class="popup__input" type="text" value="Жак-Ив Кусто" id="name" name="name"
             placeholder="Представьтесь с;">
           <input class="popup__input" type="text" value="Исследователь океана" id="profession" name="profession"
@@ -41,11 +41,13 @@
       <div class="profile__box">
         <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="Аватарка пользователя.">
         <div class="profile__info">
-          <h1 class="profile__name">Жак-Ив Кусто</h1>
+          <div class="profile__edit-container">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__button profile__button_type_edit">
+              <img src="./images/edit.svg" alt="Изменить." class="profile__button-icon profile__button-icon_type_edit">
+            </button>
+          </div>
           <p class="profile__profession">Исследователь океана</p>
-          <button class="profile__button profile__button_type_edit">
-            <img src="./images/edit.svg" alt="Изменить." class="profile__button-icon profile__button-icon_type_edit">
-          </button>
         </div>
       </div>
       <button class="profile__button profile__button_type_add">
