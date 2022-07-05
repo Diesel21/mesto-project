@@ -1,7 +1,0 @@
-.card__button-icon {
-  display: block;
-}
-
-.card__button-icon:active {
-  content: url(../../../images/like-active.svg);
-}

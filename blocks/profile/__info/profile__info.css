@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 7px;
   max-width: 336px;
   position: relative;
   width: min-content;
@@ -12,7 +12,7 @@
 @media screen and (max-width: 767px) {
   .profile__info {
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     max-width: 282px;
     width: 100%;
   }

@@ -12,30 +12,7 @@
 <body class="page">
   <header class="header">
     <img class="header__logo" src="./images/header-logo.svg" alt="Логотип сайта.">
-    <hr class="header__separator">
   </header>
-  <div class="popup">
-    <div class="popup__container">
-      <h2 class="popup__header">Редактировать профиль</h2>
-      <form class="popup__form">
-        <fieldset class="popup__inputs">
-          <!-- Не знаю как правильней сделать в этом моменте:
-              С одной стороны так меньше кода и он более чистый,
-              но тогда есть несоотвествие с макетом(расстояние от инпута до разделительной линии(нижней раницы)).
-              Если нужно 100% соотвествие - тогда оберну input и hr в отдельный блок и там задам размер.
-              В общем - если что готов быстро исправить -->
-          <input class="popup__input" type="text" value="Жак-Ив Кусто" id="name" name="name"
-            placeholder="Представьтесь с;">
-          <input class="popup__input" type="text" value="Исследователь океана" id="profession" name="profession"
-            placeholder="А чем занимаетесь?">
-        </fieldset>
-        <button class="popup__button" type="submit">Сохранить</button>
-      </form>
-      <button class="popup__close-button">
-        <img src="./images/close.svg" alt="Закрыть." class="popup__close-icon">
-      </button>
-    </div>
-  </div>
   <main class="content">
     <section class="profile">
       <div class="profile__box">
@@ -44,12 +21,10 @@
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <p class="profile__profession">Исследователь океана</p>
           <button class="profile__button profile__button_type_edit">
-            <img src="./images/edit.svg" alt="Изменить." class="profile__button-icon profile__button-icon_type_edit">
           </button>
         </div>
       </div>
       <button class="profile__button profile__button_type_add">
-        <img src="./images/add.svg" alt="Добавить." class="profile__button-icon profile__button-icon_type_add">
       </button>
     </section>
     <section class="cards">
@@ -58,42 +33,36 @@
           <img class="card__photo" src="./images/photo-kaliningragskaya-oblast.jpg" alt="Калининградская область.">
           <h2 class="card__title">Калининградская область</h2>
           <button class="card__button">
-            <img src="./images/like.svg" alt="Like." class="card__button-icon">
           </button>
         </li>
         <li class="card">
           <img class="card__photo" src="./images/photo-kaliningrad.jpg" alt="Деревня рыбаков в Калининграде.">
           <h2 class="card__title">Калининград</h2>
           <button class="card__button">
-            <img src="./images/like.svg" alt="Like." class="card__button-icon">
           </button>
         </li>
         <li class="card">
           <img class="card__photo" src="./images/photo-zelenogradsk.jpg" alt="Центральная улица Зеленоградска.">
           <h2 class="card__title">Зеленоградск</h2>
           <button class="card__button">
-            <img src="./images/like.svg" alt="Like." class="card__button-icon">
           </button>
         </li>
         <li class="card">
           <img class="card__photo" src="./images/photo-sayani.jpg" alt="Саянский хребет.">
           <h2 class="card__title">Саяны</h2>
           <button class="card__button">
-            <img src="./images/like.svg" alt="Like." class="card__button-icon">
           </button>
         </li>
         <li class="card">
           <img class="card__photo" src="./images/photo-baikal.jpg" alt="Замерзший Байкал.">
           <h2 class="card__title">Байкал</h2>
           <button class="card__button">
-            <img src="./images/like.svg" alt="Like." class="card__button-icon">
           </button>
         </li>
         <li class="card">
           <img class="card__photo" src="./images/photo-arshan.jpg" alt="Курорт Аршан.">
           <h2 class="card__title">Аршан</h2>
           <button class="card__button">
-            <img src="./images/like.svg" alt="Like." class="card__button-icon">
           </button>
         </li>
       </ul>
@@ -102,6 +71,21 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2022 Mesto Russia</p>
   </footer>
+  <div class="popup">
+    <div class="popup__container">
+      <h2 class="popup__header">Редактировать профиль</h2>
+      <form class="popup__form">
+        <fieldset class="popup__inputs">
+          <input class="popup__input" type="text" value="Жак-Ив Кусто" name="name" placeholder="Представьтесь с;">
+          <input class="popup__input" type="text" value="Исследователь океана" name="profession"
+            placeholder="А чем занимаетесь?">
+        </fieldset>
+        <button class="popup__button" type="submit">Сохранить</button>
+      </form>
+      <button class="popup__close-button">
+      </button>
+    </div>
+  </div>
 </body>
 
 </html>
