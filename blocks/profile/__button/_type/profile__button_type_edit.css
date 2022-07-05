@@ -3,9 +3,6 @@
   background-size: 10px 10px;
   border: 1px solid #FFF;
   height: 24px;
-  position: absolute;
-  right: -43px;
-  top: 14px;
   width: 24px;
 }
 
@@ -13,8 +10,6 @@
   .profile__button_type_edit {
     background-size: 7.5px 7.5px;
     height: 18px;
-    right: 19px;
-    top: 8px;
     width: 18px;
   }
 }

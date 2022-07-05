@@ -1,0 +1,10 @@
+.profile__edit-container {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.profile__edit-container::before {
+  content: '\a0';
+}
