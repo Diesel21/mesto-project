@@ -5,6 +5,8 @@
   justify-content: center;
 }
 
-.profile__edit-container::before {
-  content: '\a0';
+@media screen and (max-width:767px) {
+  .profile__edit-container::before {
+    content: '\a0';
+  }
 }
