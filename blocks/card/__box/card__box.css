@@ -1,0 +1,8 @@
+.card__box {
+  align-items: baseline;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  max-width: 240px;
+  width: 100%;
+}

@@ -1,4 +1,5 @@
 .card {
+  align-items: center;
   background-color: #FFF;
   border-radius: 10px;
   box-sizing: border-box;
@@ -7,6 +8,5 @@
   gap: 25px;
   height: 361px;
   overflow: hidden;
-  position: relative;
   width: 282px;
 }

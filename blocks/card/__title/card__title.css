@@ -6,9 +6,9 @@
   font-weight: 900;
   line-height: 29px;
   margin: 0;
-  max-width: 220px;
+  max-width: 200px;
   overflow: hidden;
-  padding: 0 0 0 21px;
+  padding: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
