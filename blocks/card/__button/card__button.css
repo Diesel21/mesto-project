@@ -1,6 +1,5 @@
 .card__button {
   background-color: transparent;
-  background-image: url(../../../images/like.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,8 +15,4 @@
 
 .card__button:hover {
   opacity: 0.5;
-}
-
-.card__button:active {
-  background-image: url(../../../images/like-active.svg);
 }
