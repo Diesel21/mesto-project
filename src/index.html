@@ -39,11 +39,20 @@
   <div class="popup popup_type_profile">
     <div class="popup__container">
       <h2 class="popup__header">Редактировать профиль</h2>
-      <form class="popup__form">
+      <form class="popup__form" novalidate>
         <fieldset class="popup__inputs">
-          <input class="popup__input popup__input_type_name" type="text" value="" name="name" placeholder="Представьтесь с;">
-          <input class="popup__input popup__input_type_job" type="text" value="" name="profession"
-            placeholder="А чем занимаетесь?">
+          <label class="popup__field">
+            <input class="popup__input" type="text" value="" name="name" placeholder="Представьтесь с;" required
+              minlength="2" maxlength="40" pattern="^[a-zA-zа-яА-Я\s-]*$"
+              data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+              id="username-input">
+            <span class="popup__error username-input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input class="popup__input" type="text" value="" name="profession" placeholder="А чем занимаетесь?" required
+              minlength="2" maxlength="200" id="job-input">
+            <span class="popup__error job-input-error"></span>
+          </label>
         </fieldset>
         <button class="popup__button" type="submit">Сохранить</button>
       </form>
@@ -54,11 +63,19 @@
   <div class="popup popup_type_add-card">
     <div class="popup__container">
       <h2 class="popup__header">Новое место</h2>
-      <form class="popup__form">
+      <form class="popup__form" novalidate>
         <fieldset class="popup__inputs">
-          <input class="popup__input_type_place" type="text" value="" name="place" placeholder="Название">
-          <input class="popup__input_type_href" type="text" value="" name="href"
-            placeholder="Ссылка на картинку">
+          <label class="popup__field">
+            <input class="popup__input" type="text" value="" name="place" placeholder="Название" required minlength="2"
+              maxlength="30" pattern="^[a-zA-zа-яА-Я\s-]*$"
+              data-error-message="Разрешены только латинские, кириллические буквы, знаки дефиса и пробелы"
+              id="place-input">
+            <span class="popup__error place-input-error"></span>
+          </label>
+          <label class="popup__field">
+            <input class="popup__input" type="url" value="" name="href" placeholder="Ссылка на картинку" id="href-input">
+            <span class="popup__error href-input-error"></span>
+          </label>
         </fieldset>
         <button class="popup__button" type="submit">Создать</button>
       </form>
@@ -67,12 +84,12 @@
     </div>
   </div>
   <div class="popup popup_type_image">
-      <figure class="popup__image-box">
-        <img src="" alt="" class="popup__image">
-        <figcaption class="popup__caption"></figcaption>
-        <button class="popup__close-button">
-        </button>
-      </figure>
+    <figure class="popup__image-box">
+      <img src="" alt="" class="popup__image">
+      <figcaption class="popup__caption"></figcaption>
+      <button class="popup__close-button">
+      </button>
+    </figure>
   </div>
   <template id="card">
     <li class="card">
