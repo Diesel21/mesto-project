@@ -1,6 +1,6 @@
 import "./index.css";
 import { enableValidation } from "./components/validate";
-import { openModal, closeModal } from "./components/modal";
+import { openModal, closeModal, closeAllModals } from "./components/modal";
 import { renderNewCard } from "./components/card";
 
 const initialCards = [
@@ -84,7 +84,16 @@ newCardButton.addEventListener("click", () => {
 });
 
 document.querySelectorAll(".popup").forEach((popup) => {
+  popup.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("popup")) closeModal(popup);
+  });
   popup.querySelector(".popup__close-button").addEventListener("click", () => {
     closeModal(popup);
   });
+});
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
+    closeAllModals();
+  }
 });
