@@ -10,12 +10,12 @@
 
 <body class="page">
   <header class="header">
-    <img class="header__logo" src="<%=require('./images/header-logo.svg')%>" alt="Логотип сайта.">
+    <img class="header__logo" src="<%=require('../images/header-logo.svg')%>" alt="Логотип сайта.">
   </header>
   <main class="content">
     <section class="profile">
       <div class="profile__box">
-        <img class="profile__avatar" src="<%=require('./images/profile-avatar.jpg')%>" alt="Аватарка пользователя.">
+        <img class="profile__avatar" src="<%=require('../images/profile-avatar.jpg')%>" alt="Аватарка пользователя.">
         <div class="profile__info">
           <div class="profile__edit-container">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -73,7 +73,7 @@
             <span class="popup__error place-input-error"></span>
           </label>
           <label class="popup__field">
-            <input class="popup__input" type="url" value="" name="href" placeholder="Ссылка на картинку" id="href-input">
+            <input class="popup__input" type="url" value="" name="href" placeholder="Ссылка на картинку" required id="href-input">
             <span class="popup__error href-input-error"></span>
           </label>
         </fieldset>

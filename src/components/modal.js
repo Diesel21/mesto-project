@@ -1,21 +1,18 @@
-const closeAllPopups = () => {
-  document.querySelectorAll(".popup").forEach((popup) => {
-    popup.classList.remove("popup_opened");
-  });
-};
-
-const closeHandle = (evt) => {
-  if (evt.key === "Escape") closeAllPopups();
+const closeByEscPress = (evt) => {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
+  }
 };
 
 const closePopup = (popup) => {
   popup.classList.remove("popup_opened");
-  document.removeEventListener("keydown", closeHandle);
+  document.removeEventListener("keydown", closeByEscPress);
 };
 
 const openPopup = (popup) => {
   popup.classList.add("popup_opened");
-  document.addEventListener("keydown", closeHandle);
+  document.addEventListener("keydown", closeByEscPress);
 };
 
 export { closePopup as closeModal, openPopup as openModal };
