@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   gap: 48px;
-  height: 330px;
   margin: 0;
   padding: 34px 36px 37px;
   position: relative;
@@ -19,7 +18,6 @@
   .popup__container {
     gap: 75px;
     padding: 25px 22px;
-    height: 322px;
     width: 282px;
   }
 }
