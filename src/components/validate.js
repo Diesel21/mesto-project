@@ -28,8 +28,6 @@ const validateInput = (form, input) => {
     hideInputError(form, input);
   } else if (input.validity.patternMismatch) {
     showInputError(form, input, input.dataset.errorMessage);
-  } else if (input.validity.valueMissing) {
-    showInputError(form, input, "Вы пропустили это поле.");
   } else {
     showInputError(form, input, input.validationMessage);
   }

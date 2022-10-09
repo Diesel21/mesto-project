@@ -1,6 +1,6 @@
 import { openModal } from "./modal";
 import { deleteCard, likeCard, unlikeCard } from "./api";
-import { handleError, handleJson } from "./utils";
+import { handleError } from "./api";
 
 const cardsGrid = document.querySelector(".cards__grid");
 const cardTemplate = document.querySelector("#card").content;
@@ -20,7 +20,6 @@ const setLikeBox = (cardBox, likes, _id, ownerId) => {
   likeButton.addEventListener("click", (e) => {
     if (likeButton.classList.contains("card__button_like-active")) {
       unlikeCard(_id)
-        .then(handleJson)
         .then((card) => {
           likeCount.textContent = card.likes.length;
           likeButton.classList.remove("card__button_like-active");
@@ -28,7 +27,6 @@ const setLikeBox = (cardBox, likes, _id, ownerId) => {
         .catch(handleError);
     } else {
       likeCard(_id)
-        .then(handleJson)
         .then((card) => {
           likeCount.textContent = card.likes.length;
           likeButton.classList.add("card__button_like-active");
@@ -61,11 +59,7 @@ const createNewCard = ({ name, link, likes, owner, _id }, ownerId) => {
     deleteButton.style.display = "block";
     deleteButton.addEventListener("click", () => {
       deleteCard(_id)
-        .then((res) =>
-          res.ok
-            ? cardElement.remove()
-            : Promise.reject(`Ошибка: ${res.status}`)
-        )
+        .then(() => cardElement.remove())
         .catch(handleError);
     });
   }

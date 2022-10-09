@@ -12,8 +12,8 @@ import {
   getUser,
   updateUserInfo,
   setUserAvatar,
+  handleError,
 } from "../components/api";
-import { handleError, handleJson } from "../components/utils";
 
 let user = {};
 
@@ -53,22 +53,20 @@ const setProfileInputs = () => {
   nameInput.value = userName.textContent;
   jobInput.value = job.textContent;
 };
-
-const setCards = () => {
-  return getCards()
-    .then(handleJson)
-    .then((cards) =>
-      cards
-        .sort((prevCard, curCard) =>
-          prevCard.createdAt > curCard.createdAt ? 1 : -1
-        )
-        .forEach((card) => renderNewCard(card, user._id))
+const renderCards = (cards) => {
+  cards
+    .sort((prevCard, curCard) =>
+      prevCard.createdAt > curCard.createdAt ? 1 : -1
     )
+    .forEach((card) => renderNewCard(card, user._id));
+};
+const loadCards = () => {
+  return getCards()
+    .then((cards) => cards)
     .catch(handleError);
 };
 const setUser = () => {
   return getUser()
-    .then(handleJson)
     .then((userInfo) => {
       user = { ...userInfo };
       userName.textContent = user.name;
@@ -78,47 +76,47 @@ const setUser = () => {
     .catch(handleError);
 };
 
-setProfileInputs();
 enableValidation(validationOptions);
-setUser().then(setCards).catch(handleError);
+
+Promise.all([setUser(), loadCards()])
+  .then((values) => renderCards(values[1]))
+  .catch(handleError);
 
 profileForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const returnButtonState = setLoadState(profileSubmitButton);
   updateUserInfo(nameInput.value, jobInput.value)
-    .then(handleJson)
     .then((userInfo) => {
       userName.textContent = userInfo.name;
       job.textContent = userInfo.about;
-      returnButtonState();
       closeModal(profilePopup);
     })
-    .catch(handleError);
+    .catch(handleError)
+    .finally(returnButtonState);
 });
 newCardForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const returnButtonState = setLoadState(newCardSubmitButton);
   addNewCard(placeInput.value, hrefInput.value)
-    .then(handleJson)
     .then((card) => {
       renderNewCard(card, user._id);
       newCardForm.reset();
-      returnButtonState();
       closeModal(newCardPopup);
-    });
+    })
+    .catch(handleError)
+    .finally(returnButtonState);
 });
 avatarPopup.addEventListener("submit", (e) => {
   e.preventDefault();
   const returnButtonState = setLoadState(avatarSubmitButton);
   setUserAvatar(avatarInput.value)
-    .then(handleJson)
     .then((user) => {
       avatar.style.backgroundImage = `url(${user.avatar})`;
       avatarForm.reset();
-      returnButtonState();
       closeModal(avatarPopup);
     })
-    .catch(handleError);
+    .catch(handleError)
+    .finally(returnButtonState);
 });
 
 profileButton.addEventListener("click", () => {

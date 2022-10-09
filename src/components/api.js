@@ -6,12 +6,21 @@ const config = {
   },
 };
 
+const handleRes = (res) =>
+  res.ok ? Promise.resolve(res) : Promise.reject(`Ошибка: ${res.status}`);
+const handleJson = (res) => res.json();
+const handleError = (error) => console.log(error);
+
 const getCards = () => {
-  return fetch(`${config.baseUrl}/cards`, { headers: config.headers });
+  return fetch(`${config.baseUrl}/cards`, { headers: config.headers })
+    .then(handleRes)
+    .then(handleJson);
 };
 
 const getUser = () => {
-  return fetch(`${config.baseUrl}/users/me`, { headers: config.headers });
+  return fetch(`${config.baseUrl}/users/me`, { headers: config.headers })
+    .then(handleRes)
+    .then(handleJson);
 };
 
 const updateUserInfo = (name, about) => {
@@ -22,7 +31,9 @@ const updateUserInfo = (name, about) => {
       name,
       about,
     }),
-  });
+  })
+    .then(handleRes)
+    .then(handleJson);
 };
 
 const addNewCard = (name, link) => {
@@ -33,28 +44,34 @@ const addNewCard = (name, link) => {
       name,
       link,
     }),
-  });
+  })
+    .then(handleRes)
+    .then(handleJson);
 };
 
 const deleteCard = (cardId) => {
   return fetch(`${config.baseUrl}/cards/${cardId}`, {
     method: "DELETE",
     headers: config.headers,
-  });
+  }).then(handleRes);
 };
 
 const likeCard = (cardId) => {
   return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
     method: "PUT",
     headers: config.headers,
-  });
+  })
+    .then(handleRes)
+    .then(handleJson);
 };
 
 const unlikeCard = (cardId) => {
   return fetch(`${config.baseUrl}/cards/likes/${cardId}`, {
     method: "DELETE",
     headers: config.headers,
-  });
+  })
+    .then(handleRes)
+    .then(handleJson);
 };
 
 const setUserAvatar = (imageLink) => {
@@ -62,7 +79,9 @@ const setUserAvatar = (imageLink) => {
     method: "PATCH",
     headers: config.headers,
     body: JSON.stringify({ avatar: imageLink }),
-  });
+  })
+    .then(handleRes)
+    .then(handleJson);
 };
 
 export {
@@ -74,4 +93,5 @@ export {
   likeCard,
   unlikeCard,
   setUserAvatar,
+  handleError,
 };
